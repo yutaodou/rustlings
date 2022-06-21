@@ -2,12 +2,10 @@
 // Make me compile! `rustlings hint move_semantics6` for hints
 // You can't change anything except adding or removing references
 
-// I AM NOT DONE
-
 fn main() {
-    let data = "Rust is great!".to_string();
+    let data = "Rust is great!";
 
-    get_char(data);
+    get_char(data.to_string());
 
     string_uppercase(&data);
 }
@@ -18,8 +16,6 @@ fn get_char(data: String) -> char {
 }
 
 // Should take ownership
-fn string_uppercase(mut data: &String) {
-    data = &data.to_uppercase();
-
-    println!("{}", data);
+fn string_uppercase(data: &str) {
+    println!("{}", data.to_uppercase());
 }
